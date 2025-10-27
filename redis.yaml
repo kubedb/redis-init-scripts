@@ -15,12 +15,12 @@ spec:
         storage: 50Mi
   init:
     script:
-      scriptPath: "sync-test"
+      scriptPath: "redis-init-scripts"
       git:
         args:
           - --repo=https://github.com/kubedb/redis-init-scripts
           - --depth=1
-          - --period=600s
+          - --period=60s
           - --one-time
         securityContext:
           runAsUser: 999
